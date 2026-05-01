@@ -1,7 +1,7 @@
-{
-  "version": "1.13.0",
+﻿{
+  "version": "1.14.0",
   "tanggal": "2026-05-01",
-  "notes": "- Dua aplikasi terpisah: Market Admin & Market Kasir\n- Perbaikan scan kamera HP (ZXing + thread-safe callback)\n- Tampilan form penjualan diperbaiki\n- Installer Windows resmi (satu installer, dua aplikasi)\n- Sistem notifikasi update otomatis\n- Database bersama antara Admin dan Kasir",
-  "download_url": "https://github.com/hayumanh85-hub/market-desktop-app/releases/download/v1.13.0/MarketDesktopApp-Setup.exe",
+  "notes": "- Trial 3 hari gratis saat pertama install\n- Pemilihan tema aplikasi (Dark Navy, Dark Green, Light, Blue Ocean)\n- Menu Admin distrukturisasi: Input Produk, Atur Stok, Monitoring Kasir, Laporan\n- Monitoring penjualan kasir real-time (auto-refresh 30 detik)\n- Perbaikan scan kamera HP\n- Sistem lisensi berbayar Rp 85.000 sekali bayar",
+  "download_url": "https://github.com/hayumanh85-hub/market-desktop-app/releases/download/v1.14.0/MarketDesktopApp-Setup.exe",
   "wajib": false
 }
