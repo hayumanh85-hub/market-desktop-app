@@ -1,0 +1,7 @@
+{
+  "version": "1.13.0",
+  "tanggal": "2026-05-01",
+  "notes": "- Dua aplikasi terpisah: Market Admin & Market Kasir\n- Perbaikan scan kamera HP (ZXing + thread-safe callback)\n- Tampilan form penjualan diperbaiki\n- Installer Windows resmi (satu installer, dua aplikasi)\n- Sistem notifikasi update otomatis\n- Database bersama antara Admin dan Kasir",
+  "download_url": "https://manproject.github.io/market-desktop-app/#download",
+  "wajib": false
+}
