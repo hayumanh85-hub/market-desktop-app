@@ -1,7 +1,7 @@
 ﻿{
   "version": "1.14.0",
   "tanggal": "2026-05-01",
-  "notes": "- Trial 3 hari gratis saat pertama install\n- Pemilihan tema aplikasi (Dark Navy, Dark Green, Light, Blue Ocean)\n- Menu Admin distrukturisasi: Input Produk, Atur Stok, Monitoring Kasir, Laporan\n- Monitoring penjualan kasir real-time (auto-refresh 30 detik)\n- Perbaikan scan kamera HP\n- Sistem lisensi berbayar Rp 85.000 sekali bayar",
+  "notes": "- Satu aplikasi untuk Admin dan Kasir\n- Login terpisah: tab Kasir dan tab Admin\n- Trial gratis 3 hari saat pertama install\n- Perbaikan scan kamera HP (thread-safe)\n- Tema mengikuti sistem Windows\n- Monitoring penjualan kasir real-time\n- Lisensi Rp 85.000 sekali bayar",
   "download_url": "https://github.com/hayumanh85-hub/market-desktop-app/releases/download/v1.14.0/MarketDesktopApp-Setup.exe",
   "wajib": false
 }
