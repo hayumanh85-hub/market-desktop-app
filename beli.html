@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beli Lisensi — Market Desktop App</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,'Segoe UI',Arial,sans-serif;background:#0f172a;color:#e2e8f0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px}
+.card{background:#1e293b;border:1px solid #334155;border-radius:16px;padding:36px 40px;max-width:520px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.logo{text-align:center;font-size:36px;margin-bottom:8px}
+h1{text-align:center;font-size:22px;color:#f1f5f9;margin-bottom:4px}
+.sub{text-align:center;color:#94a3b8;font-size:13px;margin-bottom:24px}
+.price-box{background:linear-gradient(135deg,#065f46,#047857);border-radius:12px;padding:20px;text-align:center;margin-bottom:24px}
+.price{font-size:42px;font-weight:900;color:#fff}
+.price-note{color:#a7f3d0;font-size:13px;margin-top:4px}
+.step{display:flex;align-items:flex-start;gap:12px;margin-bottom:20px}
+.step-num{background:#3b82f6;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;margin-top:2px}
+.step-content h3{font-size:14px;color:#f1f5f9;margin-bottom:6px}
+.form-group{margin-bottom:12px}
+label{display:block;font-size:12px;color:#94a3b8;margin-bottom:4px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+input{width:100%;padding:10px 14px;background:#0f172a;border:1px solid #334155;border-radius:8px;color:#f1f5f9;font-size:14px;transition:border .2s}
+input:focus{outline:none;border-color:#3b82f6}
+input::placeholder{color:#475569}
+.hwid-row{display:flex;gap:8px}
+.hwid-row input{flex:1}
+.btn-copy{background:#334155;color:#94a3b8;border:none;padding:10px 14px;border-radius:8px;cursor:pointer;font-size:12px;white-space:nowrap;transition:all .2s}
+.btn-copy:hover{background:#475569;color:#f1f5f9}
+.info-box{background:#1e3a5f;border:1px solid #1d4ed8;border-radius:8px;padding:12px 14px;font-size:12px;color:#93c5fd;margin-bottom:16px;line-height:1.6}
+.info-box strong{color:#60a5fa}
+.btn-bayar{width:100%;padding:14px;background:linear-gradient(135deg,#059669,#10b981);color:white;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;margin-top:8px}
+.btn-bayar:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(16,185,129,.4)}
+.btn-bayar:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.divider{border:none;border-top:1px solid #334155;margin:20px 0}
+.footer-note{text-align:center;font-size:11px;color:#475569;margin-top:16px}
+.footer-note a{color:#3b82f6}
+.error{color:#f87171;font-size:12px;margin-top:4px;display:none}
+.success-box{background:#064e3b;border:1px solid #059669;border-radius:12px;padding:20px;text-align:center;display:none}
+.success-box h2{color:#34d399;margin-bottom:8px}
+.success-box p{color:#a7f3d0;font-size:13px;line-height:1.6}
+.back-link{display:block;text-align:center;margin-top:16px;color:#3b82f6;font-size:13px;text-decoration:none}
+.back-link:hover{text-decoration:underline}
+.trakteer-note{background:#1a1a2e;border:1px solid #7c3aed;border-radius:8px;padding:12px;font-size:12px;color:#c4b5fd;margin-top:12px;text-align:center}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="logo">🛒</div>
+  <h1>Beli Lisensi Market App</h1>
+  <p class="sub">Sekali bayar, aktif selamanya di 1 komputer</p>
+
+  <div class="price-box">
+    <div class="price">Rp 75.000</div>
+    <div class="price-note">✅ Market Admin + Market Kasir · Update gratis selamanya</div>
+  </div>
+
+  <!-- Form pembelian -->
+  <div id="form-section">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>Isi data Anda</h3>
+        <div class="form-group">
+          <label>Nama Lengkap</label>
+          <input type="text" id="inp-nama" placeholder="Contoh: Budi Santoso" required>
+          <div class="error" id="err-nama">Nama harus diisi</div>
+        </div>
+        <div class="form-group">
+          <label>Email (untuk terima license key)</label>
+          <input type="email" id="inp-email" placeholder="email@anda.com" required>
+          <div class="error" id="err-email">Email tidak valid</div>
+        </div>
+        <div class="form-group">
+          <label>Hardware ID Komputer Anda</label>
+          <div class="hwid-row">
+            <input type="text" id="inp-hwid" placeholder="Buka aplikasi → lihat Hardware ID" required>
+            <button class="btn-copy" onclick="pasteHwid()">📋 Paste</button>
+          </div>
+          <div class="error" id="err-hwid">Hardware ID harus diisi</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      💡 <strong>Cara mendapatkan Hardware ID:</strong><br>
+      Download aplikasi → buka → akan muncul halaman aktivasi → salin Hardware ID yang tertera → paste di kolom atas.
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>Lakukan pembayaran via Trakteer</h3>
+        <p style="font-size:13px;color:#94a3b8">Setelah klik tombol di bawah, Anda akan diarahkan ke halaman pembayaran Trakteer. Masukkan pesan: <strong style="color:#f1f5f9">nama + email + HWID</strong> di kolom pesan Trakteer.</p>
+      </div>
+    </div>
+
+    <button class="btn-bayar" onclick="prosesPayment()">
+      💳 Lanjut ke Pembayaran
+    </button>
+
+    <div class="trakteer-note">
+      🔒 Pembayaran diproses oleh <strong>Trakteer</strong> — platform pembayaran terpercaya Indonesia.<br>
+      Support: QRIS · GoPay · OVO · Dana · Transfer Bank
+    </div>
+  </div>
+
+  <!-- Success state -->
+  <div class="success-box" id="success-section">
+    <h2>✅ Terima Kasih!</h2>
+    <p>
+      Data Anda telah tercatat.<br><br>
+      Setelah pembayaran dikonfirmasi, license key akan dikirim ke:<br>
+      <strong id="confirm-email" style="color:#34d399"></strong><br><br>
+      Proses pengiriman: <strong>maksimal 1×24 jam</strong> (biasanya lebih cepat)
+    </p>
+  </div>
+
+  <hr class="divider">
+  <div class="footer-note">
+    Ada pertanyaan? Hubungi <a href="mailto:hayumanh85@gmail.com">hayumanh85@gmail.com</a><br>
+    <a href="index.html">← Kembali ke halaman utama</a>
+  </div>
+</div>
+
+<script>
+// ── Konfigurasi — GANTI dengan link Trakteer Anda ──────────────────
+const TRAKTEER_URL = "https://trakteer.id/manproject/tip";
+// Setelah daftar di trakteer.id, ganti URL di atas dengan URL profil Anda
+// ──────────────────────────────────────────────────────────────────
+
+function pasteHwid() {
+  navigator.clipboard.readText().then(t => {
+    document.getElementById('inp-hwid').value = t.trim();
+  }).catch(() => {
+    alert('Tidak bisa paste otomatis. Paste manual dengan Ctrl+V');
+    document.getElementById('inp-hwid').focus();
+  });
+}
+
+function validasi() {
+  let ok = true;
+  const nama  = document.getElementById('inp-nama').value.trim();
+  const email = document.getElementById('inp-email').value.trim();
+  const hwid  = document.getElementById('inp-hwid').value.trim();
+
+  // Reset errors
+  document.querySelectorAll('.error').forEach(e => e.style.display = 'none');
+
+  if (!nama) {
+    document.getElementById('err-nama').style.display = 'block';
+    ok = false;
+  }
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    document.getElementById('err-email').style.display = 'block';
+    ok = false;
+  }
+  if (!hwid || hwid.length < 8) {
+    document.getElementById('err-hwid').style.display = 'block';
+    ok = false;
+  }
+  return ok;
+}
+
+function prosesPayment() {
+  if (!validasi()) return;
+
+  const nama  = document.getElementById('inp-nama').value.trim();
+  const email = document.getElementById('inp-email').value.trim();
+  const hwid  = document.getElementById('inp-hwid').value.trim();
+
+  // Simpan data ke localStorage untuk referensi
+  localStorage.setItem('market_order', JSON.stringify({ nama, email, hwid, waktu: new Date().toISOString() }));
+
+  // Tampilkan konfirmasi
+  document.getElementById('confirm-email').textContent = email;
+  document.getElementById('form-section').style.display = 'none';
+  document.getElementById('success-section').style.display = 'block';
+
+  // Buka Trakteer dengan pesan otomatis
+  const pesan = encodeURIComponent(`Nama: ${nama} | Email: ${email} | HWID: ${hwid} | Produk: Market Desktop App v1.13.0`);
+  const url = `${TRAKTEER_URL}?message=${pesan}`;
+
+  // Buka di tab baru setelah 1 detik
+  setTimeout(() => window.open(url, '_blank'), 1000);
+}
+</script>
+
+</body>
+</html>

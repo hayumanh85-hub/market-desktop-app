@@ -1,15 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Market Desktop App — Aplikasi Kasir & Manajemen Toko</title>
-  <meta name="description" content="Aplikasi kasir dan manajemen stok toko. Gratis, mudah digunakan, lengkap dengan laporan dan backup data.">
-  <link rel="stylesheet" href="assets/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Market Desktop App — Aplikasi Kasir & Manajemen Toko</title>
+<meta name="description" content="Aplikasi kasir dan manajemen stok toko untuk Windows.">
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-
-<!-- ── NAVBAR ─────────────────────────────────────────────────────── -->
 <nav class="navbar">
   <div class="container nav-inner">
     <div class="nav-brand">🛒 Market App</div>
@@ -20,35 +18,36 @@
       <li><a href="#changelog">Pembaruan</a></li>
       <li><a href="#download" class="btn-nav">Download</a></li>
     </ul>
+    <button class="nav-toggle" onclick="toggleNav()">☰</button>
   </div>
 </nav>
 
-<!-- ── HERO ───────────────────────────────────────────────────────── -->
 <section class="hero">
+  <div class="hero-bg-anim"></div>
   <div class="container hero-inner">
-    <div class="hero-text">
-      <div class="badge">✨ Versi Terbaru: <span id="hero-version">1.13.0</span></div>
-      <h1>Aplikasi Kasir &amp;<br>Manajemen Toko</h1>
-      <p class="hero-sub">
-        Kelola toko Anda dengan mudah — penjualan, stok, laporan, dan backup
-        dalam satu aplikasi desktop yang ringan dan cepat.
-      </p>
+    <div class="hero-text" data-aos="fade-right">
+      <div class="badge pulse">✨ Versi Terbaru: <span id="hero-version">1.13.0</span></div>
+      <h1>Aplikasi Kasir &amp;<br><span class="gradient-text">Manajemen Toko</span></h1>
+      <p class="hero-sub">Kelola toko Anda dengan mudah — penjualan, stok, laporan, dan backup dalam satu aplikasi desktop yang ringan dan cepat.</p>
       <div class="hero-btns">
-        <a href="#download" class="btn btn-primary">⬇️ Download Gratis</a>
-        <a href="#fitur" class="btn btn-outline">Lihat Fitur</a>
+        <a href="https://github.com/hayumanh85-hub/market-desktop-app/releases/download/v1.13.0/MarketDesktopApp-Setup.exe" class="btn btn-primary glow">⬇️ Download Gratis</a>
+        <a href="#screenshot" class="btn btn-outline">🖼️ Lihat Screenshot</a>
       </div>
       <div class="hero-meta">
         <span>✅ Windows 10/11</span>
-        <span>✅ Offline (tanpa internet)</span>
-        <span>✅ Gratis selamanya</span>
+        <span>✅ Offline</span>
+        <span>✅ Sekali Bayar</span>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">2</span><span class="stat-lbl">Aplikasi</span></div>
+        <div class="stat"><span class="stat-num">8+</span><span class="stat-lbl">Fitur</span></div>
+        <div class="stat"><span class="stat-num">Rp75rb</span><span class="stat-lbl">Sekali Bayar</span></div>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="app-mockup">
+    <div class="hero-visual" data-aos="fade-left">
+      <div class="app-mockup float-anim">
         <div class="mockup-bar">
-          <span class="dot red"></span>
-          <span class="dot yellow"></span>
-          <span class="dot green"></span>
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
           <span class="mockup-title">Market Desktop App</span>
         </div>
         <div class="mockup-body">
@@ -60,62 +59,229 @@
           </div>
           <div class="mockup-content">
             <div class="mock-title">Pencatatan Penjualan</div>
-            <div class="mock-row"><span class="mock-label">Kode:</span><span class="mock-input">8997225872166</span></div>
+            <div class="mock-row"><span class="mock-label">Kode:</span><span class="mock-input scan-anim">8997225872166</span></div>
             <div class="mock-row"><span class="mock-label">Produk:</span><span class="mock-val green">Indomie Goreng</span></div>
             <div class="mock-row"><span class="mock-label">Harga:</span><span class="mock-val">Rp 3.500</span></div>
             <div class="mock-total">TOTAL: Rp 45.000</div>
           </div>
         </div>
       </div>
+      <div class="mockup-badge badge-kasir">🛒 Market Kasir</div>
+      <div class="mockup-badge badge-admin">⚙️ Market Admin</div>
     </div>
   </div>
 </section>
 
-<!-- ── FITUR ──────────────────────────────────────────────────────── -->
+<section class="stats-bar">
+  <div class="container stats-inner">
+    <div class="stat-item"><span class="stat-icon">⚡</span><span>Ringan & Cepat</span></div>
+    <div class="stat-item"><span class="stat-icon">🔒</span><span>Data Aman Terenkripsi</span></div>
+    <div class="stat-item"><span class="stat-icon">📱</span><span>Scan via HP</span></div>
+    <div class="stat-item"><span class="stat-icon">🖨️</span><span>Cetak Struk PDF</span></div>
+    <div class="stat-item"><span class="stat-icon">📊</span><span>Laporan Otomatis</span></div>
+  </div>
+</section>
+
 <section class="section" id="fitur">
   <div class="container">
-    <h2 class="section-title">Fitur Lengkap</h2>
-    <p class="section-sub">Semua yang Anda butuhkan untuk mengelola toko</p>
+    <div class="section-header">
+      <h2 class="section-title">Fitur <span class="gradient-text">Lengkap</span></h2>
+      <p class="section-sub">Semua yang Anda butuhkan untuk mengelola toko</p>
+    </div>
     <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">🛒</div>
+      <div class="feature-card" data-aos="fade-up" data-delay="0">
+        <div class="feature-icon-wrap green-bg">🛒</div>
         <h3>Kasir Cepat</h3>
-        <p>Scan barcode otomatis, tampilan customer display, kalkulator kembalian, dan cetak struk PDF.</p>
+        <p>Scan barcode otomatis, customer display, kalkulator kembalian, dan cetak struk PDF.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">📦</div>
+      <div class="feature-card" data-aos="fade-up" data-delay="100">
+        <div class="feature-icon-wrap blue-bg">📦</div>
         <h3>Manajemen Produk</h3>
         <p>Input produk dengan barcode pabrik, kode internal, harga, stok minimum, dan label rak.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">📊</div>
+      <div class="feature-card" data-aos="fade-up" data-delay="200">
+        <div class="feature-icon-wrap purple-bg">📊</div>
         <h3>Laporan Otomatis</h3>
         <p>Laporan penjualan harian/bulanan, ekspor ke Excel/CSV, dan grafik pemasukan.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">📱</div>
+      <div class="feature-card" data-aos="fade-up" data-delay="300">
+        <div class="feature-icon-wrap orange-bg">📱</div>
         <h3>Scan via HP</h3>
         <p>Gunakan kamera HP sebagai scanner barcode melalui WiFi — tanpa alat tambahan.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">💾</div>
-        <h3>Backup &amp; Restore</h3>
+      <div class="feature-card" data-aos="fade-up" data-delay="400">
+        <div class="feature-icon-wrap red-bg">💾</div>
+        <h3>Backup & Restore</h3>
         <p>Backup database terenkripsi, restore satu klik, dan ekspor data ke CSV.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">👥</div>
+      <div class="feature-card" data-aos="fade-up" data-delay="500">
+        <div class="feature-icon-wrap teal-bg">��</div>
         <h3>Multi Pengguna</h3>
-        <p>Role Admin dan Kasir dengan akses berbeda. Dua aplikasi terpisah dalam satu installer.</p>
+        <p>Role Admin dan Kasir dengan akses berbeda. Dua aplikasi dalam satu installer.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── DUA APLIKASI ───────────────────────────────────────────────── -->
-<section class="section section-alt" id="apps">
+<section class="section section-dark" id="screenshot">
   <div class="container">
-    <h2 class="section-title">Dua Aplikasi, Satu Installer</h2>
-    <p class="section-sub">Satu instalasi menghasilkan dua aplikasi yang saling terhubung</p>
+    <div class="section-header">
+      <h2 class="section-title" style="color:white">Tampilan <span class="gradient-text">Aplikasi</span></h2>
+      <p class="section-sub" style="color:#94a3b8">Lihat tampilan nyata aplikasi Market Desktop</p>
+    </div>
+    <div class="screenshot-tabs">
+      <button class="tab-btn active" onclick="showTab('kasir')">🛒 Kasir</button>
+      <button class="tab-btn" onclick="showTab('produk')">📦 Produk</button>
+      <button class="tab-btn" onclick="showTab('laporan')">📊 Laporan</button>
+      <button class="tab-btn" onclick="showTab('admin')">⚙️ Admin</button>
+    </div>
+    <div class="screenshot-display">
+      <div class="ss-panel active" id="ss-kasir">
+        <div class="ss-mockup">
+          <div class="ss-bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span style="color:#888;font-size:12px;margin-left:8px">Market Kasir — Penjualan</span></div>
+          <div class="ss-body">
+            <div class="ss-sidebar">
+              <div class="ss-logo">🛒</div>
+              <div class="ss-nav active">Penjualan</div>
+              <div style="flex:1"></div>
+              <div class="ss-nav logout">Logout</div>
+            </div>
+            <div class="ss-main">
+              <div class="ss-left">
+                <div class="ss-section-title">Kasir - Input Transaksi</div>
+                <div class="ss-form-row"><span class="ss-lbl">Kode:</span><div class="ss-input">8997225872166 ▌</div></div>
+                <div class="ss-form-row"><span class="ss-lbl">Produk:</span><div class="ss-val green-text">Indomie Goreng (Stok: 50)</div></div>
+                <div class="ss-form-row"><span class="ss-lbl">Jumlah:</span><div class="ss-input">1</div></div>
+                <div class="ss-form-row"><span class="ss-lbl">Harga:</span><div class="ss-input">Rp 3.500</div></div>
+                <div class="ss-form-row"><span class="ss-lbl">Subtotal:</span><div class="ss-val green-text bold">Rp 3.500</div></div>
+                <div class="ss-btn-row">
+                  <div class="ss-btn blue">+ Keranjang</div>
+                  <div class="ss-btn green">Simpan</div>
+                  <div class="ss-btn gray">Bersih</div>
+                </div>
+                <div class="ss-divider"></div>
+                <div class="ss-kembalian-title">💰 Kalkulator Kembalian</div>
+                <div class="ss-form-row"><span class="ss-lbl">Uang:</span><div class="ss-input">Rp 50.000</div></div>
+                <div class="ss-form-row"><span class="ss-lbl">Kembali:</span><div class="ss-val green-text bold">Rp 5.000</div></div>
+                <div class="ss-btn-selesai">✔ SELESAI — Simpan Semua</div>
+              </div>
+              <div class="ss-right">
+                <div class="ss-display-title">DISPLAY PEMBELI</div>
+                <div class="ss-last-scan">✓ Indomie Goreng<br>1x @ Rp 3.500</div>
+                <div class="ss-cart-header"><span>Produk</span><span>Qty</span><span>Subtotal</span></div>
+                <div class="ss-cart-row highlight"><span>Indomie Goreng</span><span>1x</span><span>Rp 3.500</span></div>
+                <div class="ss-cart-row"><span>Aqua 600ml</span><span>2x</span><span>Rp 8.000</span></div>
+                <div class="ss-cart-row"><span>Teh Botol</span><span>3x</span><span>Rp 15.000</span></div>
+                <div class="ss-total-display">TOTAL: Rp 26.500</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="ss-caption">Tampilan kasir dengan customer display — pembeli bisa melihat keranjang belanja secara real-time</p>
+      </div>
+
+      <div class="ss-panel" id="ss-produk">
+        <div class="ss-mockup">
+          <div class="ss-bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span style="color:#888;font-size:12px;margin-left:8px">Market Admin — Manajemen Produk</span></div>
+          <div class="ss-body">
+            <div class="ss-sidebar">
+              <div class="ss-logo">⚙️</div>
+              <div class="ss-nav">Penjualan</div>
+              <div class="ss-nav active">Produk</div>
+              <div class="ss-nav">Stok</div>
+              <div class="ss-nav">Laporan</div>
+              <div style="flex:1"></div>
+              <div class="ss-nav logout">Logout</div>
+            </div>
+            <div class="ss-main" style="flex-direction:column;padding:12px">
+              <div class="ss-section-title">Manajemen Produk</div>
+              <div class="ss-search-bar">🔍 Cari produk... <span class="ss-btn blue" style="margin-left:auto;padding:2px 8px">+ Tambah</span></div>
+              <div class="ss-table">
+                <div class="ss-table-head"><span>Kode</span><span>Nama Produk</span><span>Harga</span><span>Stok</span><span>Status</span></div>
+                <div class="ss-table-row"><span>BRG001</span><span>Indomie Goreng</span><span>Rp 3.500</span><span>50</span><span class="badge-aktif">Aktif</span></div>
+                <div class="ss-table-row"><span>BRG002</span><span>Aqua 600ml</span><span>Rp 4.000</span><span>30</span><span class="badge-aktif">Aktif</span></div>
+                <div class="ss-table-row highlight"><span>BRG003</span><span>Teh Botol 350ml</span><span>Rp 5.000</span><span class="red-text">3</span><span class="badge-low">Stok Rendah</span></div>
+                <div class="ss-table-row"><span>BRG004</span><span>Chitato 68g</span><span>Rp 12.000</span><span>25</span><span class="badge-aktif">Aktif</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="ss-caption">Manajemen produk lengkap dengan barcode pabrik, stok minimum, dan notifikasi stok rendah</p>
+      </div>
+
+      <div class="ss-panel" id="ss-laporan">
+        <div class="ss-mockup">
+          <div class="ss-bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span style="color:#888;font-size:12px;margin-left:8px">Market Admin — Laporan</span></div>
+          <div class="ss-body">
+            <div class="ss-sidebar">
+              <div class="ss-logo">⚙️</div>
+              <div class="ss-nav">Penjualan</div>
+              <div class="ss-nav">Produk</div>
+              <div class="ss-nav active">Laporan</div>
+              <div style="flex:1"></div>
+              <div class="ss-nav logout">Logout</div>
+            </div>
+            <div class="ss-main" style="flex-direction:column;padding:12px">
+              <div class="ss-section-title">Laporan Penjualan</div>
+              <div class="ss-stats-row">
+                <div class="ss-stat-card green"><div class="ss-stat-val">Rp 2.450.000</div><div class="ss-stat-lbl">Pemasukan Hari Ini</div></div>
+                <div class="ss-stat-card blue"><div class="ss-stat-val">127</div><div class="ss-stat-lbl">Transaksi Bulan Ini</div></div>
+                <div class="ss-stat-card purple"><div class="ss-stat-val">Rp 45.2jt</div><div class="ss-stat-lbl">Total Bulan Ini</div></div>
+              </div>
+              <div class="ss-chart">
+                <div class="ss-chart-title">Grafik Penjualan 7 Hari</div>
+                <div class="ss-bars">
+                  <div class="ss-bar-item"><div class="ss-bar-fill" style="height:40%"></div><span>Sen</span></div>
+                  <div class="ss-bar-item"><div class="ss-bar-fill" style="height:65%"></div><span>Sel</span></div>
+                  <div class="ss-bar-item"><div class="ss-bar-fill" style="height:50%"></div><span>Rab</span></div>
+                  <div class="ss-bar-item"><div class="ss-bar-fill" style="height:80%"></div><span>Kam</span></div>
+                  <div class="ss-bar-item"><div class="ss-bar-fill" style="height:90%"></div><span>Jum</span></div>
+                  <div class="ss-bar-item"><div class="ss-bar-fill" style="height:100%"></div><span>Sab</span></div>
+                  <div class="ss-bar-item"><div class="ss-bar-fill" style="height:70%"></div><span>Min</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="ss-caption">Laporan penjualan lengkap dengan grafik, statistik, dan ekspor ke Excel/CSV</p>
+      </div>
+
+      <div class="ss-panel" id="ss-admin">
+        <div class="ss-mockup">
+          <div class="ss-bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span style="color:#888;font-size:12px;margin-left:8px">Market Admin — Backup & Restore</span></div>
+          <div class="ss-body">
+            <div class="ss-sidebar">
+              <div class="ss-logo">⚙️</div>
+              <div class="ss-nav">Penjualan</div>
+              <div class="ss-nav">Produk</div>
+              <div class="ss-nav">Laporan</div>
+              <div class="ss-nav active">Backup</div>
+              <div style="flex:1"></div>
+              <div class="ss-nav logout">Logout</div>
+            </div>
+            <div class="ss-main" style="flex-direction:column;padding:16px;gap:10px">
+              <div class="ss-section-title">Backup & Restore Data</div>
+              <div class="ss-backup-info">Buat backup database terenkripsi untuk melindungi data toko Anda.</div>
+              <div class="ss-btn-backup blue">💾 Buat Backup Sekarang</div>
+              <div class="ss-btn-backup orange">🔄 Restore dari Backup</div>
+              <div class="ss-btn-backup green">📊 Ekspor Data ke CSV</div>
+              <div class="ss-divider"></div>
+              <div class="ss-last-backup">✓ Backup terakhir: 01/05/2026 14:30 · market_backup_2026-05-01.mktbak</div>
+            </div>
+          </div>
+        </div>
+        <p class="ss-caption">Fitur backup terenkripsi — data toko aman dari kehilangan dan kerusakan</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="apps">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Dua Aplikasi, <span class="gradient-text">Satu Installer</span></h2>
+      <p class="section-sub">Satu instalasi menghasilkan dua aplikasi yang saling terhubung</p>
+    </div>
     <div class="apps-grid">
       <div class="app-card kasir">
         <div class="app-icon">🛒</div>
@@ -148,22 +314,12 @@
   </div>
 </section>
 
-<!-- ── CHANGELOG ─────────────────────────────────────────────────── -->
-<section class="section" id="changelog">
-  <div class="container">
-    <h2 class="section-title">Riwayat Pembaruan</h2>
-    <div class="changelog" id="changelog-list">
-      <!-- Diisi otomatis dari version.json -->
-      <div class="changelog-loading">Memuat riwayat pembaruan...</div>
-    </div>
-  </div>
-</section>
-
-<!-- ── HARGA ──────────────────────────────────────────────────── -->
 <section class="section section-alt" id="harga">
   <div class="container">
-    <h2 class="section-title">Harga</h2>
-    <p class="section-sub">Bayar sekali, pakai selamanya</p>
+    <div class="section-header">
+      <h2 class="section-title">Harga <span class="gradient-text">Terjangkau</span></h2>
+      <p class="section-sub">Bayar sekali, pakai selamanya</p>
+    </div>
     <div class="pricing-card">
       <div class="pricing-badge">🏆 Lisensi Seumur Hidup</div>
       <div class="pricing-price">Rp 75.000</div>
@@ -180,35 +336,37 @@
         Transfer Rp 75.000 → <strong>BCA 1234567890 a/n ManProject</strong><br>
         Kirim bukti + Hardware ID ke WhatsApp developer
       </div>
-      <a href="https://github.com/hayumanh85-hub/market-desktop-app/releases/download/v1.13.0/MarketDesktopApp-Setup.exe" class="btn btn-primary" target="_blank"
-         style="display:block;text-align:center;margin-top:16px;text-decoration:none;">
-        💬 Beli via WhatsApp
+      <a href="beli.html">
+        💬 Hubungi via WhatsApp
       </a>
     </div>
   </div>
 </section>
 
-<!-- ── DOWNLOAD ───────────────────────────────────────────────────── -->
+<section class="section" id="changelog">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Riwayat <span class="gradient-text">Pembaruan</span></h2>
+    </div>
+    <div class="changelog" id="changelog-list">
+      <div class="changelog-loading">Memuat...</div>
+    </div>
+  </div>
+</section>
+
 <section class="section section-download" id="download">
   <div class="container download-inner">
-    <h2>Download Market Desktop App</h2>
-    <p>Gratis untuk semua toko. Tidak perlu registrasi.</p>
-
+    <h2>Download <span class="gradient-text">Sekarang</span></h2>
+    <p>Coba gratis — aktivasi lisensi setelah puas</p>
     <div class="download-card">
       <div class="download-info">
         <div class="download-version">Versi <span id="dl-version">1.13.0</span></div>
         <div class="download-date">Dirilis: <span id="dl-date">2026-05-01</span></div>
-        <div class="download-size">📦 ~50 MB · Windows 10/11 (64-bit)</div>
+        <div class="download-size">📦 ~51 MB · Windows 10/11 (64-bit)</div>
       </div>
-      <a id="dl-btn" href="https://github.com/hayumanh85-hub/market-desktop-app/releases/download/v1.13.0/MarketDesktopApp-Setup.exe" class="btn btn-download" target="_blank">
-        ⬇️ Download Installer
-      </a>
+      <a id="dl-btn" href="https://github.com/hayumanh85-hub/market-desktop-app/releases/download/v1.13.0/MarketDesktopApp-Setup.exe" class="btn btn-download glow" target="_blank">⬇️ Download Installer</a>
     </div>
-
-    <div class="download-notes" id="dl-notes">
-      <!-- Diisi dari version.json -->
-    </div>
-
+    <div class="download-notes" id="dl-notes"></div>
     <div class="install-steps">
       <h3>Cara Install</h3>
       <ol>
@@ -221,96 +379,44 @@
   </div>
 </section>
 
-<!-- ── FOOTER ─────────────────────────────────────────────────────── -->
 <footer class="footer">
   <div class="container footer-inner">
     <div class="footer-brand">🛒 Market Desktop App</div>
-    <div class="footer-info">
-      Dibuat oleh <strong>ManProject</strong> ·
-      <a href="mailto:hayumanh85@gmail.com">hayumanh85@gmail.com</a>
-    </div>
+    <div class="footer-info">Dibuat oleh <strong>ManProject</strong> · <a href="mailto:hayumanh85@gmail.com">hayumanh85@gmail.com</a></div>
     <div class="footer-copy">© 2024–2026 ManProject. Semua hak dilindungi.</div>
   </div>
 </footer>
 
-<!-- ── SCRIPT ─────────────────────────────────────────────────────── -->
 <script>
-// Muat data dari version.json
-async function muatVersi() {
-  try {
-    const res = await fetch('version.json?t=' + Date.now());
-    const data = await res.json();
-
-    // Update hero
-    document.getElementById('hero-version').textContent = data.version;
-
-    // Update download section
-    document.getElementById('dl-version').textContent = data.version;
-    document.getElementById('dl-date').textContent = data.tanggal;
-
-    const dlBtn = document.getElementById('dl-btn');
-    if (data.download_url) dlBtn.href = data.download_url;
-
-    // Tampilkan catatan update
-    if (data.notes) {
-      const notesEl = document.getElementById('dl-notes');
-      const lines = data.notes.split('\\n').filter(l => l.trim());
-      notesEl.innerHTML = '<h4>Yang baru di versi ini:</h4><ul>' +
-        lines.map(l => `<li>${l.replace(/^[-•]\s*/, '')}</li>`).join('') +
-        '</ul>';
+function toggleNav(){document.querySelector('.nav-links').classList.toggle('open')}
+function showTab(name){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.ss-panel').forEach(p=>p.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('ss-'+name).classList.add('active');
+}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1});
+document.querySelectorAll('[data-aos]').forEach(el=>obs.observe(el));
+async function muatVersi(){
+  try{
+    const res=await fetch('version.json?t='+Date.now());
+    const data=await res.json();
+    document.getElementById('hero-version').textContent=data.version;
+    document.getElementById('dl-version').textContent=data.version;
+    document.getElementById('dl-date').textContent=data.tanggal;
+    const dlBtn=document.getElementById('dl-btn');
+    if(data.download_url)dlBtn.href=data.download_url;
+    if(data.notes){
+      const lines=data.notes.split('\\n').filter(l=>l.trim());
+      document.getElementById('dl-notes').innerHTML='<h4>Yang baru:</h4><ul>'+lines.map(l=>'<li>'+l.replace(/^[-•]\s*/,'')+'</li>').join('')+'</ul>';
     }
-
-    // Changelog
-    muatChangelog(data);
-
-  } catch(e) {
-    console.error('Gagal muat version.json:', e);
-  }
+    const el=document.getElementById('changelog-list');
+    const notes=data.notes?data.notes.split('\\n').filter(l=>l.trim()):[];
+    el.innerHTML=`<div class="changelog-item latest"><div class="changelog-header"><span class="changelog-ver">v${data.version}</span><span class="changelog-date">${data.tanggal}</span><span class="changelog-badge">Terbaru</span></div><ul class="changelog-notes">${notes.map(n=>'<li>'+n.replace(/^[-•]\s*/,'')+'</li>').join('')}</ul></div><div class="changelog-item"><div class="changelog-header"><span class="changelog-ver">v1.12.0</span><span class="changelog-date">2026-04-15</span></div><ul class="changelog-notes"><li>Fitur scan kamera HP</li><li>Tampilan form penjualan diperbaiki</li><li>Installer Windows resmi</li></ul></div>`;
+  }catch(e){console.error(e)}
 }
-
-function muatChangelog(data) {
-  const el = document.getElementById('changelog-list');
-  const notes = data.notes ? data.notes.split('\\n').filter(l => l.trim()) : [];
-  el.innerHTML = `
-    <div class="changelog-item latest">
-      <div class="changelog-header">
-        <span class="changelog-ver">v${data.version}</span>
-        <span class="changelog-date">${data.tanggal}</span>
-        <span class="changelog-badge">Terbaru</span>
-      </div>
-      <ul class="changelog-notes">
-        ${notes.map(n => `<li>${n.replace(/^[-•]\s*/, '')}</li>`).join('')}
-      </ul>
-    </div>
-    <div class="changelog-item">
-      <div class="changelog-header">
-        <span class="changelog-ver">v1.12.0</span>
-        <span class="changelog-date">2026-04-15</span>
-      </div>
-      <ul class="changelog-notes">
-        <li>Fitur scan barcode menggunakan kamera HP</li>
-        <li>Tampilan form penjualan diperbaiki</li>
-        <li>Installer Windows resmi</li>
-        <li>Perbaikan berbagai bug tampilan</li>
-      </ul>
-    </div>
-    <div class="changelog-item">
-      <div class="changelog-header">
-        <span class="changelog-ver">v1.11.0</span>
-        <span class="changelog-date">2026-03-20</span>
-      </div>
-      <ul class="changelog-notes">
-        <li>Cetak struk otomatis format thermal 80mm</li>
-        <li>Kalkulator kembalian di halaman penjualan</li>
-        <li>Support barcode pabrik (dual barcode)</li>
-        <li>Auto-scan produk langsung masuk keranjang</li>
-      </ul>
-    </div>
-  `;
-}
-
 muatVersi();
 </script>
-
 </body>
 </html>
+
